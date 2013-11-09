@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package app.model;
 
 import java.io.Serializable;
@@ -14,10 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- *
- * @author Administrador
- */
 @Entity
 @Table(name = "local")
 public class Local implements Serializable {

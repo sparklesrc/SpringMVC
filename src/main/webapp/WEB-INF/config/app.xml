@@ -10,8 +10,11 @@
     <!-- ya no ira el scan en datbase sino aqui-->
     <context:component-scan base-package="app" />
 	
-    <mvc:annotation-driven />
+    <mvc:annotation-driven />  <!-- Indica a Spring scannear controller classes -->
 
+    <mvc:resources mapping="/public/**" location="/public/" />
+    <mvc:resources mapping="/img/**" location="/img/" />
+    
     <bean id="paramResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
         <property name="paramName" value="action" />
     </bean>

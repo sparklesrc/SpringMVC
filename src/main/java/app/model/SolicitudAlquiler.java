@@ -1,11 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package app.model;
-
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,12 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
 
-/**
- *
- * @author Administrador
- */
 @Entity
 @Table(name = "solicitud_alquiler")
 public class SolicitudAlquiler implements Serializable {
@@ -28,26 +17,31 @@ public class SolicitudAlquiler implements Serializable {
     @GeneratedValue
     @Column(name = "id")
     private Long id;
+
     @Column(name = "hora_inicio")
     private String horaInicio;
+
     @Column(name = "hora_fin")
-    private String horaFin;
-    @Column(name = "fecha")
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fecha;
+    private  String horaFin;
+
+    @Column(name = "dia")
+    private int dia;
+
     @Column(name = "servicios")
     private String servicios;
+
     @Column(name = "estado")
     private Integer estado;
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "id_socio")
     private Socio socio;
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "id_campo")
     private Campo campo;
 
-    public SolicitudAlquiler() {
-    }
+    public SolicitudAlquiler() {}
 
     public SolicitudAlquiler(Long id) {
         this.id = id;
@@ -55,7 +49,7 @@ public class SolicitudAlquiler implements Serializable {
 
     public Long getId() {
         return id;
-    }
+    }	
 
     public void setId(Long id) {
         this.id = id;
@@ -77,17 +71,18 @@ public class SolicitudAlquiler implements Serializable {
         this.horaFin = horaFin;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public int getDia() {
+        return dia;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setDia(int dia) {
+        this.dia = dia;
     }
 
+    
     public String getServicios() {
         return servicios;
-    }
+    }	
 
     public void setServicios(String servicios) {
         this.servicios = servicios;
@@ -95,7 +90,7 @@ public class SolicitudAlquiler implements Serializable {
 
     public Integer getEstado() {
         return estado;
-    }
+    }	
 
     public void setEstado(Integer estado) {
         this.estado = estado;
@@ -108,7 +103,6 @@ public class SolicitudAlquiler implements Serializable {
     public void setSocio(Socio socio) {
         this.socio = socio;
     }
-
     public Campo getCampo() {
         return campo;
     }

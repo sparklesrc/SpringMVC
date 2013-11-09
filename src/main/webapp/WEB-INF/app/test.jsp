@@ -10,8 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <%@include file="/public/header.jsp" %>
     </head>
     <body>
+
         <h1>Hello World!</h1>
         <p>${mensaje}</p> <!-- Estoy imprimiendo un mensaje q m enviaron de algun lugar -->
 
@@ -21,13 +23,14 @@
         <form action="guardarDos" method="post">
             <label>Nombres</label>
             <input type="text" name="nombres"/>
-            
+
             <label>Apellidos</label>
             <input type="text" name="apellidos"/>
-            
+
             <input type="submit"/>
         </form>
-
+        
+       <img src="<%=request.getContextPath()%>/img/correr.gif"/>
 
     </body>
 </html>

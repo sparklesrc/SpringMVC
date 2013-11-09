@@ -42,7 +42,7 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     
-     <tx:annotation-driven/>
+     <tx:annotation-driven/>  <!-- Indica a Spring scannear Data Access Annotations-->
     
     <!-- Ahora aqui ya no va el coponent SCAN app -->
   
